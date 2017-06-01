@@ -1,0 +1,1 @@
+cmd_/home/osboxes/Documents/project_2/example_2-1/hello-1.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/osboxes/Documents/project_2/example_2-1/hello-1.ko /home/osboxes/Documents/project_2/example_2-1/hello-1.o /home/osboxes/Documents/project_2/example_2-1/hello-1.mod.o ;  true

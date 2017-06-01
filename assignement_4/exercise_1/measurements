@@ -1,0 +1,35 @@
+swapFile
+
+BUFSIZE 1
+real           0m32.929s
+BUFSIZE 10
+real           0m3.414s
+BUFSIZE 100
+real           0m0.373s
+BUFSIZE 1024
+real           0m0.082s
+BUFSIZE 2048
+real           0m0.061s
+BUFSIZE 4096
+real           0m0.051s
+BUFSIZE 8192
+real           0m0.062s
+
+swapFile2
+
+BUFSIZE 1
+does not work because of appended null byte?
+BUFSIZE 2
+real           0m1.356s
+BUFSIZE 10
+real           0m0.208s
+BUFSIZE 100
+real           0m0.093s
+BUFSIZE 1024
+real           0m0.085s
+BUFSIZE 2048
+real           0m0.089s
+BUFSIZE 4096
+real           0m0.091s
+BUFSIZE 8192
+real           0m0.100s
