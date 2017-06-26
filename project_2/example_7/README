@@ -1,0 +1,61 @@
+Project 2 - Tobias Schaffner <schaffne@hm.edu>
+
+-------------------
+- OpenFile Search -
+-------------------
+
+1. Everything works as required.
+
+2. Description of the programms:
+
+
+Makefile
+--------
+
+The makefile will build all components and do a insmod.
+You find the mknod can be found in the dmesg.
+
+
+openFileSearch - The kernel module
+----------------------------------
+
+OpenFile Search is a Character Device that lets you search for open Files for a
+specified pid, uid, owner or name of a file.
+
+	ofs_open
+		Opens the device and makes sure it is only opended once.
+
+	ofs_release
+		Will free the device and make sure it can be opened again.
+
+	ofs_read
+		Writes a specified number of results into a buffer and returns
+		the number of results read.
+
+	ofs_ioctl
+		Will do a search and save the result for the next read.
+		The search will be locked with a rcu lock.
+
+
+
+ioctl - The user space program
+------------------------------
+
+Usage: ioctl <mode> <param> <Number of results>
+Modes:
+    pid           Get all open files for a Process id
+      param:      Integer: ID of the process
+
+    uid           Get all open files for a User
+      param:      Integer: UID of the user
+
+    owner         Get all open files that are owned by a given user
+      param:      Integer: UID of the owner
+
+    name          Get all open files with the given name
+      param:      String up to 64 byte: Name of the file
+
+Number of Results: The maximum number of results you want to get.
+
+
+3. No Bugs known.
